@@ -11,7 +11,7 @@ Its operators are inspired by their [swift-prelude](https://github.com/pointfree
 Add the following to the `dependencies` section of your `Package.swift` file:
 
 ```swift
-.package(url: "https://github.com/randomeizer/swift-rhapsody.git", from: "0.5.0")
+.package(url: "https://github.com/randomeizer/swift-rhapsody", from: "0.5.0")
 ```
 
 Then add `Rhapsody` as a dependency for your target:
