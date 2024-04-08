@@ -1,7 +1,5 @@
 import Overture
 
-infix operator >>>: infixr9
-
 /// Forware composition of functions. Useful for chaining operations.
 ///     
 ///    let chars2url: (UnsafePointer<CChar>) -> URL = String.init(validatingUTF8:) >>> URL.init(string:)

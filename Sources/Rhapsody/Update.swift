@@ -1,7 +1,5 @@
 import Overture
 
-infix operator |>: infixl1
-
 /// Left-to-right, in-place function application.
 ///
 ///     var user = User(name: "Blob")
@@ -14,7 +12,37 @@ infix operator |>: infixl1
 @inlinable
 public func |> <A>(
   _ a: inout A,
+  _ fs: (inout A) -> Void
+  ) {
+  fs(&a)
+}
+
+// overload for throwing functions
+
+@inlinable
+public func |> <A>(
+  _ a: inout A,
   _ fs: (inout A) throws -> Void
-  ) rethrows {
-  try update(&a, fs)
+  ) throws {
+  try fs(&a)
+}
+
+// overload for reference types
+
+@inlinable
+public func |> <A: AnyObject>(
+  _ a: A,
+  _ fs: @escaping (A) -> Void
+  ) {
+  fs(a)
+}
+
+// overload for throwing functions
+
+@inlinable
+public func |> <A: AnyObject>(
+  _ a: A,
+  _ fs: @escaping (A) throws -> Void
+  ) throws {
+  try fs(a)
 }

@@ -1,7 +1,5 @@
 import Overture
 
-infix operator <>: infixr5
-
 /// Composes an array of functions that take and return the same type.
 ///
 /// - Parameters:

@@ -1,7 +1,5 @@
 import Overture
 
-infix operator >=>: infixr1
-
 // use Overture.chain 
 
 /// Forward composition of functions that return optionals. Useful for chaining operations that may fail.

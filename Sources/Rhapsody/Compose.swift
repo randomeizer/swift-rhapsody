@@ -1,7 +1,5 @@
 import Overture
 
-infix operator <<<: infixr9
-
 /// Backward composition of functions.
 ///
 /// - Parameters:
