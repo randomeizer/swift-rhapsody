@@ -17,3 +17,12 @@ public func <<< <A, B, C>(
   -> (A) -> C {
   compose(f, g)
 }
+
+@inlinable
+public func <<< <A, B, C>(
+  _ f: @escaping (B) throws -> C,
+  _ g: @escaping (A) throws -> B
+  )
+  -> (A) throws -> C {
+  compose(f, g)
+}

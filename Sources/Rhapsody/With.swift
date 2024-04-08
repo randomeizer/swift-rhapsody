@@ -15,3 +15,13 @@ public func |> <A, B>(
   ) -> B {
   with(a, f)
 }
+
+// overload for functions that throw
+
+@inlinable
+public func |> <A, B>(
+  _ a: A,
+  _ f: (A) throws -> B
+  ) throws -> B {
+  try with(a, f)
+}
